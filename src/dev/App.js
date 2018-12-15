@@ -24,14 +24,22 @@ class DevRenderer extends PrismaCmsRenderer {
 
   getRoutes() {
 
-    return [{
-      exact: true,
-      path: "/",
-      component: App,
-    }, {
-      path: "*",
-      render: props => this.renderOtherPages(props),
-    },];
+    // return [{
+    //   exact: true,
+    //   path: "/",
+    //   component: App,
+    // }, {
+    //   path: "*",
+    //   render: props => this.renderOtherPages(props),
+    // },];
+
+    return [
+      {
+        exact: true,
+        path: "/",
+        component: App,
+      }
+    ].concat(super.getRoutes());
 
   }
 
